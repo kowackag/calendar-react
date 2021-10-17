@@ -1,12 +1,31 @@
 {
-    "meetings": [
-        {
-            "firstName": "Jan",
-            "lastName": "Kowalski",
-            "email": "jan@kowalski.not",
-            "date": "2022-01-01",
-            "time": "10:00",
-            "id": 1
-        }
-    ]
+  "meetings": [
+    {
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jan@kowalski.not",
+      "date": "2022-01-01",
+      "time": "10:00",
+      "id": 1
+    },
+    {
+      "firstName": "Gosia",
+      "lastName": "Kowacka",
+      "email": "jan@kowalski.not",
+      "date": "2022-10-01",
+      "time": "11:00",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "firstName": "Gosia",
+      "lastName": "Kowacka",
+      "email": "jan@kowalski.not",
+      "date": "2022-10-01",
+      "time": "11:00",
+      "id": 5
+    }
+  ]
 }
