@@ -26,13 +26,18 @@ class Calendar extends React.Component {
     }
 
     deleteMeeting = (item) => {
-        console.log(item)
+        const {id} = item;
+        console.log(id)
+        meetingsDB.removeData(id)
+        .then(()=>this.loadMeetings())
+        .catch(err => console.log(err))
     }
 
     render() {
         return(
             <>
-                <CalendarForm onSubmit={this.addMeeting}/>
+                <h3 className="title"> Kreator spotkań </h3>
+                <CalendarForm items = {this.state.meetings} onSubmit={this.addMeeting}/>
                 <CalendarList onClick={this.deleteMeeting} items ={this.state.meetings}/>
             </>
         )

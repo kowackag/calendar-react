@@ -1,0 +1,52 @@
+.creator {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #F0F0F5;
+}
+
+.creator__form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin-top: 10px;
+    height: 40px;
+    border:none;
+    color: rgb(59, 59, 59);
+}
+
+.creator__btn {
+    width: 90%;
+    margin:10px auto;
+    background-color: #505564;
+    color: #F0F0F5;
+}
+
+.input__time-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input__time {
+    width: 30%;
+    text-align: center
+}
+
+
+.prompt__item {
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    list-style:none;
+    background-color: white;
+    color: #505564;
+}
+
+.prompt__item:hover {
+   border: 2px solid #505564;
+   font-weight:bold;
+}

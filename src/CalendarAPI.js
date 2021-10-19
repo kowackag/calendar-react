@@ -36,8 +36,9 @@ class CalendarAPI {
         return this._fetch(options,`/${id}`)
     }
    
-    _fetch(options) {
-        return fetch(this.url, options)
+    _fetch(options, additionalPath="") {
+        const url = `${this.url}${additionalPath}`
+        return fetch(url, options)
             .then(resp =>{
                 if(resp.ok){
                     return resp.json();
