@@ -28,7 +28,6 @@ class Calendar extends React.Component {
 
     deleteMeeting = (item) => {
         const {id} = item;
-        console.log(id)
         meetingsDB.removeData(id)
         .then(()=>this.loadMeetings())
         .catch(err => console.log(err))

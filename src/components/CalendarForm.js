@@ -38,7 +38,7 @@ class CalendarForm extends React.Component {
 
     addMeeting = (item) => {
         const {firstName, lastName, email, date, time} = item;
-        if (firstName && lastName && email && date && time && this.state.errors.length===0) {
+        if (firstName && lastName && email && date && time && this.state.errors.length === 0) {
             this.props.onSubmit(item);
             this.setState({meeting:{
                 firstName:'',
@@ -60,7 +60,6 @@ class CalendarForm extends React.Component {
         this.setState({prompts: prompts})
        }
     } 
-
 
     autocomplete = ({firstName, lastName, email}) => {
        this.setState({
@@ -93,21 +92,20 @@ class CalendarForm extends React.Component {
     render() {
         return(
             <section className="creator"> 
-            
-            <form className="creator__form form" onSubmit = {(e)=> this.handleForm(e)}>
-                <input className="input" placeholder="Imię" name="firstName" value={this.state.meeting.firstName} onChange={(e) => this.handleInput(e)} />
-                <input className="input" placeholder="Nazwisko" name = "lastName" value={this.state.meeting.lastName} onChange={(e) => this.handleInput(e)}/>
-                <input className="input" type="email" placeholder="email" name = "email" value={this.state.meeting.email} onChange={(e) => this.handleInput(e)}/>
-                <div className="input__time-container"><input className="input__time input" type="date" name="date" onChange={(e) => this.handleInput(e)}/>
-                <input className="input__time input" type="time" name = "time" onChange={(e) => this.handleInput(e)}/></div>
-                <input className="input creator__btn" type="submit" value ="Dodaj spotkanie"/> 
-            </form>
-            <ul className = "prompt"> 
-                {this.state.prompts.map((item) => <li className = "prompt__item" onClick={()=>this.autocomplete(item)}>{`${item.firstName} ${item.lastName} (${item.email})`}</li> )}
-            </ul>
+                <form className="creator__form form" onSubmit = {(e)=> this.handleForm(e)}>
+                    <input className="input" placeholder="Imię" name="firstName" value={this.state.meeting.firstName} onChange={(e) => this.handleInput(e)} />
+                    <input className="input" placeholder="Nazwisko" name = "lastName" value={this.state.meeting.lastName} onChange={(e) => this.handleInput(e)}/>
+                    <input className="input" type="email" placeholder="email" name = "email" value={this.state.meeting.email} onChange={(e) => this.handleInput(e)}/>
+                    <div className="input__time-container"><input className="input__time input" type="date" name="date" onChange={(e) => this.handleInput(e)}/>
+                    <input className="input__time input" type="time" name = "time" onChange={(e) => this.handleInput(e)}/></div>
+                    <input className="input creator__btn" type="submit" value ="Dodaj spotkanie"/> 
+                </form>
+                <ul className = "prompt"> 
+                    {this.state.prompts.map((item) => <li className = "prompt__item" onClick={()=>this.autocomplete(item)}>{`${item.firstName} ${item.lastName} (${item.email})`}</li> )}
+                </ul>
             </section>
         )
-}
+    }
 }
 
 export default CalendarForm;
