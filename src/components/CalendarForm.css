@@ -4,6 +4,7 @@
     max-width: 1200px;
     margin: auto;
     background-color: #F0F0F5;
+    border: 2px solid #F0F0F5;
 }
 
 .creator__form {

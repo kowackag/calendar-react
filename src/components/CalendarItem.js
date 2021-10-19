@@ -1,4 +1,5 @@
 import React from 'react';
+import './CalendarItem.css'
 
 export default class CalendarItem extends React.Component {
 
@@ -6,11 +7,13 @@ export default class CalendarItem extends React.Component {
      const {item} = this.props;
      const {firstName, lastName, email, date, time} = item;
      return (
-        <li>
-            <h2>{`${firstName} ${lastName}`}</h2> 
-            <p>{email}</p>
-            <time>{`${date} godz. ${time}`}</time>
-            <button onClick={() =>{this.props.onClick(item)}}>Usuń</button>
+        <li className="meeting">
+            <div className ="meeting-info"> 
+                <h3 className="meeting__name" >{`${firstName} ${lastName}`}</h3> 
+                <a className="meeting__email" href={`mailto:${email}`}>{email}</a>
+                <time className="meeting__time">{`${date} godz. ${time}`}</time>
+            </div>
+            <button className="btn" onClick={() =>{this.props.onClick(item)}}>Usuń</button>
         </li>)
  }
 }

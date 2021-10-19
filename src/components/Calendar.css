@@ -1,0 +1,8 @@
+.calendar-box {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    text-transform: uppercase
+}
