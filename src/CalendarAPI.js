@@ -3,7 +3,7 @@ class CalendarAPI {
         this.url = "http://localhost:3005/meetings";
     }
 
-    loadData() {
+    loadDataAPI() {
         return this._fetch()
     }
 

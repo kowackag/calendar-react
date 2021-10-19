@@ -15,19 +15,25 @@ class Calendar extends React.Component {
     }
 
     loadMeetings() {
-        meetingsDB.loadData()
+        meetingsDB.loadDataAPI()
             .then(items=>this.setState({meetings: items}))
     }
     
-    addMeeting(data) {
+    addMeeting = (data) => {
         meetingsDB.addDataAPI(data)
+        .then(()=>this.loadMeetings())
+        .catch(err => console.log(err))
+    }
+
+    deleteMeeting = (item) => {
+        console.log(item)
     }
 
     render() {
         return(
             <>
                 <CalendarForm onSubmit={this.addMeeting}/>
-                <CalendarList items ={this.state.meetings}/>
+                <CalendarList onClick={this.deleteMeeting} items ={this.state.meetings}/>
             </>
         )
     }
