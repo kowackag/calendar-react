@@ -2,7 +2,7 @@ import React from 'react';
 import './CalendarItem.css'
 
 export default class CalendarItem extends React.Component {
-
+    
     render() {
      const {item} = this.props;
      const {firstName, lastName, email, date, time} = item;

@@ -1,4 +1,5 @@
 import React from 'react';
+import {v4 as uuid} from 'uuid';
 import './CalendarForm.css';
 
 class CalendarForm extends React.Component {
@@ -57,7 +58,8 @@ class CalendarForm extends React.Component {
        const {items} = this.props;
        if (value) {
         const prompts = items.filter((item) => item[name].match(regex));
-        this.setState({prompts: prompts})
+        const copyPrompts = prompts.map(item => {return {...item, id: uuid()}})
+        this.setState({prompts: copyPrompts})
        }
     } 
 
@@ -101,7 +103,7 @@ class CalendarForm extends React.Component {
                     <input className="input creator__btn" type="submit" value ="Dodaj spotkanie"/> 
                 </form>
                 <ul className = "prompt"> 
-                    {this.state.prompts.map((item) => <li className = "prompt__item" onClick={()=>this.autocomplete(item)}>{`${item.firstName} ${item.lastName} (${item.email})`}</li> )}
+                    {this.state.prompts.map((item) => <li key={item.id} className = "prompt__item" onClick={()=>this.autocomplete(item)}>{`${item.firstName} ${item.lastName} (${item.email})`}</li> )}
                 </ul>
             </section>
         )
