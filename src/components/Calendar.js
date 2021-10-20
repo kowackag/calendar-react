@@ -22,15 +22,15 @@ class Calendar extends React.Component {
     
     addMeeting = (data) => {
         meetingsDB.addDataAPI(data)
-        .then(()=>this.loadMeetings())
-        .catch(err => console.log(err))
+            .then(()=>this.loadMeetings())
+            .catch(err => console.log(err))
     }
 
     deleteMeeting = (item) => {
         const {id} = item;
         meetingsDB.removeData(id)
-        .then(()=>this.loadMeetings())
-        .catch(err => console.log(err))
+            .then(()=>this.loadMeetings())
+            .catch(err => console.log(err))
     }
 
     render() {

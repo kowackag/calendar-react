@@ -16,7 +16,7 @@ class CalendarForm extends React.Component {
     }
 
     handleInput = (e) => {
-        this.findMeeting(e.target);
+        this.findMeetingForSuggestion(e.target);
         const {value, name} = e.target;
         this.setState(()=> {
             return {meeting:{...this.state.meeting, [name]: value} }
@@ -27,11 +27,11 @@ class CalendarForm extends React.Component {
         e.preventDefault();
         await this.setState({errors:[]});
         const meeting = {
-            firstName: await this.validateName(e.target.firstName.value),
-            lastName: await this.validateName(e.target.lastName.value),
-            email: await this.validateEmail(e.target.email.value),
-            date: await this.validateDate(e.target.date.value),
-            time: await this.validateTime(e.target.time.value),
+            firstName: this.validateName(e.target.firstName.value),
+            lastName: this.validateName(e.target.lastName.value),
+            email: this.validateEmail(e.target.email.value),
+            date: this.validateDate(e.target.date.value),
+            time: this.validateTime(e.target.time.value),
         }
         this.addMeeting(meeting);
 
@@ -51,7 +51,7 @@ class CalendarForm extends React.Component {
             } else alert(this.state.errors)
     }
 
-    findMeeting(item) {
+    findMeetingForSuggestion(item) {
        this.setState({prompts: []})
        const {name, value} = item;
        const regex = new RegExp(value, 'gi');
