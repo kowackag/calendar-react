@@ -25,7 +25,7 @@ class CalendarForm extends React.Component {
 
     handleForm = async (e) => {
         e.preventDefault();
-        // this.setState({errors:[]});
+        this.setState({errors:[]});
         const meeting = {
             firstName: e.target.firstName.value,
             lastName: e.target.lastName.value,
