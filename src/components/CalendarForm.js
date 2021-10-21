@@ -38,23 +38,8 @@ class CalendarForm extends React.Component {
         } else alert(this.state.errors)
     }
 
-    // handleForm = async (e) => {
-    //     e.preventDefault();
-    //     await this.setState({errors:[]});
-    //     const meeting = {
-    //         firstName: this.validateName(e.target.firstName.value),
-    //         lastName: this.validateName(e.target.lastName.value),
-    //         email: this.validateEmail(e.target.email.value),
-    //         date: this.validateDate(e.target.date.value),
-    //         time: this.validateTime(e.target.time.value),
-    //     }
-    //     this.addMeeting(meeting);
-    // }
-
     addMeeting = (item) => {
-        const {firstName, lastName, email, date, time} = item;
-        if (firstName && lastName && email && date && time && this.state.errors.length === 0) {
-            this.props.onSubmit(item);
+        this.props.onSubmit(item);
             this.setState({meeting:{
                 firstName:'',
                 lastName: '',
@@ -62,7 +47,6 @@ class CalendarForm extends React.Component {
                 date: '',
                 time: ''
             }})
-            } else alert(this.state.errors)
     }
 
     findMeetingForSuggestion(item) {
@@ -106,28 +90,6 @@ class CalendarForm extends React.Component {
         } else {return true}
     }
 
-
-    // validateName(name) {
-    //     if (name.length <3) {
-    //         this.setState({errors: [...this.state.errors, 'First and last name should consist of more than 3 characters']})
-    //     } else {return name}
-    // }
-
-    // validateEmail(email) {
-    //     const reg = /@/;
-    //     if (reg.test(email)) {return email} else {this.setState({errors: [...this.state.errors, 'Invalid email']})}
-    // }
-
-    // validateDate(date) {
-    //     const reg = /(20[0-9]{2})-(0[1-9]|1[0-2])-(0[0-9]|[12][0-9]|3[01])/;
-    //     if (reg.test(date)) {return date} else {this.setState({errors: [...this.state.errors, 'Invalid date']})}
-    // }
-
-    // validateTime(time) {
-    //     const reg = /([01][0-9]|2[0-3]):([012345][0-9])/;
-    //     if (reg.test(time)) {return time} else {this.setState({errors: [...this.state.errors, 'Invalid time']})}
-    // }
-    
     render() {
         return(
             <section className="creator"> 

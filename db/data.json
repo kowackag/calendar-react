@@ -52,17 +52,17 @@
       "firstName": "Marianna",
       "lastName": "Kowacka",
       "email": "mariakg@poczta.fm",
-      "date": "2021-10-12",
-      "time": "12:17",
-      "id": 11
-    },
-    {
-      "firstName": "Marianna",
-      "lastName": "Kowacka",
-      "email": "mariakg@poczta.fm",
       "date": "2021-10-06",
       "time": "11:14",
       "id": 12
+    },
+    {
+      "firstName": "Małgorzata",
+      "lastName": "Kowacka",
+      "email": "gosia_kow@gazeta.pl",
+      "date": "2021-10-26",
+      "time": "10:17",
+      "id": 13
     }
   ]
 }
