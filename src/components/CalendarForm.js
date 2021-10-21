@@ -11,7 +11,6 @@ class CalendarForm extends React.Component {
             date: '',
             time: ''
         },
-        errors:[],
         prompts:[]
     }
 
@@ -23,9 +22,8 @@ class CalendarForm extends React.Component {
         })
     }
 
-    handleForm = async (e) => {
+    handleForm = (e) => {
         e.preventDefault();
-        this.setState({errors:[]});
         const meeting = {
             firstName: e.target.firstName.value,
             lastName: e.target.lastName.value,
@@ -33,20 +31,20 @@ class CalendarForm extends React.Component {
             date: e.target.date.value,
             time: e.target.time.value,
         } 
-        if (await this.validateData(meeting)) {
+        if (this.validateData(meeting)) {
             this.addMeeting(meeting);
-        } else alert(this.state.errors)
+        }
     }
 
-    addMeeting = (item) => {
-        this.props.onSubmit(item);
-            this.setState({meeting:{
-                firstName:'',
-                lastName: '',
-                email: '',
-                date: '',
-                time: ''
-            }})
+    addMeeting = async (item) => {
+        await this.props.onSubmit(item);
+        this.setState({meeting:{
+            firstName:'',
+            lastName: '',
+            email: '',
+            date: '',
+            time: ''
+        }})
     }
 
     findMeetingForSuggestion(item) {
@@ -85,9 +83,10 @@ class CalendarForm extends React.Component {
         if (!regTime.test(time)) {errors.push('Invalid time')}
 
         if (errors.length>0) {
-            this.setState({errors: errors});
+            alert(errors);
             return false
-        } else {return true}
+        } else { 
+            return true}
     }
 
     render() {
