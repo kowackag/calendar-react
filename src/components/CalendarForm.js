@@ -23,7 +23,7 @@ class CalendarForm extends React.Component {
         })
     }
 
-    handleForm = (e) => {
+    handleForm = async (e) => {
         e.preventDefault();
         // this.setState({errors:[]});
         const meeting = {
@@ -33,7 +33,7 @@ class CalendarForm extends React.Component {
             date: e.target.date.value,
             time: e.target.time.value,
         } 
-        if (this.validateData(meeting)) {
+        if (await this.validateData(meeting)) {
             this.addMeeting(meeting);
         } else alert(this.state.errors)
     }
